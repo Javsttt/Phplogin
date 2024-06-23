@@ -17,7 +17,7 @@
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['user_id'] = $results['id'];
-      header("Location: /php.login");
+      header("Location: home.php");
     } else {
       $message = 'Sorry, those credentials do not match';
     }
@@ -41,7 +41,7 @@
 
 
 <h1>Login</h1>
-<span>or <a href="Signup.php">Signup</a></span>
+<span>or <a href="signup.php">Signup</a></span>
 
 <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
@@ -49,10 +49,12 @@
 
 
     <form action="login.php" method="post">
-    <input type="text" name="email" placeholder="Ingresa tu email"> 
-    <input type="password" name="password" placeholder="Ingresa tu contrasena">
-    <input type="submit" value="Send">
+      <input type="email" name="email" placeholder="Ingresa tu email"> 
+      <input type="password" name="password" placeholder="Ingresa tu contrasena">
+      <input type="submit" value="Send">
     </form>
-
+    <span>
+      Did you forget your password? <a href="changePass.php">change it!</a>
+    </span>
 </body>
 </html>

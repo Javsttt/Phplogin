@@ -2,7 +2,7 @@
 
 $server = 'localhost';
 $username = 'root';
-$password = '';
+$password = 'Theminer79.';
 $database = 'php_login_database';
 
 try {
@@ -10,5 +10,3 @@ try {
 } catch (PDOException $e) {
   die('Connection Failed: ' . $e->getMessage());
 }
-
-?>
